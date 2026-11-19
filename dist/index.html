@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sagar Sahu, software developer and MCA candidate in Mumbai. Explore my full-stack projects, skills, and résumé.">
+  <title>Sagar Sahu · Developer Portfolio</title>
+  <script>
+    try { if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="portfolio.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="wrap nav-row">
+      <a class="brand" href="#home"><span aria-hidden="true">S</span> Sagar Sahu</a>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#home" aria-current="location">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <button class="theme" type="button" aria-label="Light mode" aria-pressed="false"><span aria-hidden="true">☼</span><span aria-hidden="true">☾</span></button>
+        <button class="menu" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="floor" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow intro" style="--step:0">Developer Portfolio</span>
+          <h1 id="hero-title" class="intro" style="--step:1">Code. Build.<br>Deploy. <em>Repeat.</em></h1>
+          <p class="intro" style="--step:2">I’m Sagar Sahu, an MCA candidate building full-stack applications with a focus on usability and reliable software.</p>
+          <div class="actions intro" style="--step:3">
+            <a class="button primary" href="#projects">My Projects</a>
+            <a class="button" href="Sagar_Sahu_Resume.docx" download>Download Résumé</a>
+          </div>
+        </div>
+        <div class="code-entry intro" style="--step:2">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span><small>developer.js</small></div>
+            <pre><code><b>const</b> developer = {
+  name: <i>"Sagar Sahu"</i>,
+  role: <i>"Software Developer"</i>,
+  interests: [<i>"Web Dev"</i>, <i>"AI"</i>],
+  location: <i>"Mumbai, India"</i>
+};
+
+developer.<strong>build</strong>();</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="wrap section" aria-labelledby="about-title">
+      <h2 id="about-title" data-reveal>About</h2>
+      <div class="bento about-grid">
+        <article class="card" data-reveal>
+          <div class="profile">
+            <span class="avatar" aria-hidden="true">SS</span>
+            <div><h3>Sagar Sahu</h3><p>MCA candidate · Mumbai, India</p></div>
+          </div>
+          <p>I’m an aspiring software developer and BSc IT graduate. I enjoy taking a feature from the interface through the API to the database, and I’ve put that into practice in projects spanning fraud detection, résumé creation, and food ordering.</p>
+        </article>
+        <article class="card" data-reveal style="--delay:80ms">
+          <h3>Education</h3>
+          <ol class="timeline">
+            <li data-reveal><span>2025 – Present</span><strong>Master of Computer Applications</strong><p>SIES College of Management Studies</p></li>
+            <li data-reveal style="--delay:90ms"><span>2022 – 2025</span><strong>BSc Information Technology</strong><p>Tilak College</p></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    <section id="skills" class="wrap section" aria-labelledby="skills-title">
+      <h2 id="skills-title" data-reveal>Technical Skills</h2>
+      <div class="bento skills-grid">
+        <article class="card" data-reveal><span class="icon" aria-hidden="true">{ }</span><h3>Programming Languages</h3><ul class="tags"><li>Java</li><li>JavaScript</li><li>SQL</li></ul></article>
+        <article class="card" data-reveal style="--delay:60ms"><span class="icon" aria-hidden="true">&lt;/&gt;</span><h3>Frontend</h3><ul class="tags"><li>React</li><li>Angular</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li></ul></article>
+        <article class="card" data-reveal style="--delay:120ms"><span class="icon" aria-hidden="true">$_</span><h3>Backend</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>Spring Boot</li><li>FastAPI</li></ul></article>
+        <article class="card" data-reveal><span class="icon" aria-hidden="true">▤</span><h3>Databases</h3><ul class="tags"><li>MySQL</li><li>MongoDB</li><li>PostgreSQL</li><li>Supabase</li></ul></article>
+        <article class="card" data-reveal style="--delay:60ms"><span class="icon" aria-hidden="true">⌘</span><h3>Tools</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>Docker</li><li>Postman</li><li>REST APIs</li></ul></article>
+      </div>
+    </section>
+    <section id="projects" class="wrap section" aria-labelledby="projects-title">
+      <h2 id="projects-title" data-reveal>Selected Projects</h2>
+      <div class="bento project-grid">
+        <article class="card project" data-reveal>
+          <div class="project-visual shield" aria-hidden="true"><div class="art"><span>⌾</span><b>InternShield</b><i></i><i></i><i></i></div></div>
+          <div class="project-content"><div class="project-copy"><h3>InternShield AI</h3><p>Flags potentially fraudulent jobs and internships with weighted risk scoring, company verification, and scam reporting.</p></div>
+          <ul class="tags"><li>React</li><li>Python</li><li>FastAPI</li><li>Gemini API</li><li>PostgreSQL</li></ul>
+          <div class="actions"><a class="button" href="https://internshield-pmio.vercel.app/" target="_blank" rel="noopener" aria-label="InternShield AI live demo (opens in a new tab)">Live Demo</a><a class="button" href="https://github.com/Sagar-rolex/internshield" target="_blank" rel="noopener" aria-label="InternShield AI on GitHub (opens in a new tab)">GitHub</a></div></div>
+        </article>
+        <article class="card project" data-reveal style="--delay:80ms">
+          <div class="project-visual foodie" aria-hidden="true"><div class="art"><b>Foodie Express</b><span class="food-grid"><i></i><i></i><i></i></span><i></i></div></div>
+          <div class="project-content"><div class="project-copy"><h3>Foodie Express</h3><p>A full-stack food ordering app with menu management, cart, checkout, order history, and Razorpay test payments.</p></div>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Java</li><li>Spring Boot</li><li>MySQL</li></ul>
+          <div class="actions"><a class="button" href="https://sagar-rolex-foodie-express.vercel.app/" target="_blank" rel="noopener" aria-label="Foodie Express live demo (opens in a new tab)">Live Demo</a><a class="button" href="https://github.com/Sagar-rolex/Sagar-rolex-Foodie-Express" target="_blank" rel="noopener" aria-label="Foodie Express on GitHub (opens in a new tab)">GitHub</a></div></div>
+        </article>
+        <article class="card project" data-reveal style="--delay:160ms">
+          <div class="project-visual resume" aria-hidden="true"><div class="art"><div class="sheet"><b>Résumé</b><i></i><i></i><i></i><i></i></div><span>✦</span></div></div>
+          <div class="project-content"><div class="project-copy"><h3>AI Resume Builder</h3><p>An AI-assisted résumé editor with customizable templates, real-time preview, saved drafts, and PDF export.</p></div>
+          <ul class="tags"><li>MongoDB</li><li>Express.js</li><li>React</li><li>Node.js</li></ul>
+          <div class="actions"><a class="button" href="https://resume-builder-seven-jet.vercel.app/" target="_blank" rel="noopener" aria-label="AI Resume Builder live demo (opens in a new tab)">Live Demo</a><a class="button" href="https://github.com/Sagar-rolex/ResumeBuilder" target="_blank" rel="noopener" aria-label="AI Resume Builder on GitHub (opens in a new tab)">GitHub</a></div></div>
+        </article>
+      </div>
+    </section>
+    <section id="contact" class="wrap section" aria-labelledby="contact-title">
+      <div class="card contact" data-reveal>
+        <div><h2 id="contact-title">Get in touch</h2><a class="email" href="mailto:24sahusagar@gmail.com">24sahusagar@gmail.com</a></div>
+        <div class="actions"><a class="button" href="https://github.com/Sagar-rolex">GitHub</a><a class="button" href="https://www.linkedin.com/in/sagar-sahu-24112925b/">LinkedIn</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>Sagar Sahu</span><a href="#home">Back to top</a></footer>
+</body>
+</html>
