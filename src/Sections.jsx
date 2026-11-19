@@ -69,7 +69,15 @@ export function Skills() {
     <section id="skills" tabIndex={-1} className="wrap section" aria-labelledby="skills-title">
       <h2 id="skills-title" data-reveal>Technical Skills</h2>
       <div className="grid gap-4 skills-grid">
-        <article className="card" data-reveal><span className="icon" aria-hidden="true">{ }</span><h3>Programming Languages</h3><ul className="tags"><li>Java</li><li>JavaScript</li><li>SQL</li></ul></article>
+        <article className="card" data-reveal>
+          <span className="icon" aria-hidden="true">
+            <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M10 11l-3 3 3 3m4-6 3 3-3 3" />
+            </svg>
+          </span>
+          <h3>Programming Languages</h3>
+          <ul className="tags"><li>Java</li><li>JavaScript</li><li>SQL</li></ul>
+        </article>
         <article className="card" data-reveal style={{ "--delay": "60ms" }}><span className="icon" aria-hidden="true">&lt;/&gt;</span><h3>Frontend</h3><ul className="tags"><li>React</li><li>Angular</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li></ul></article>
         <article className="card" data-reveal style={{ "--delay": "120ms" }}><span className="icon" aria-hidden="true">$_</span><h3>Backend</h3><ul className="tags"><li>Node.js</li><li>Express.js</li><li>Spring Boot</li><li>FastAPI</li></ul></article>
         <article className="card" data-reveal><span className="icon" aria-hidden="true">▤</span><h3>Databases</h3><ul className="tags"><li>MySQL</li><li>MongoDB</li><li>PostgreSQL</li><li>Supabase</li></ul></article>
