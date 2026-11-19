@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { About, Achievements, Certifications, Contact, Footer, Hero, Projects, Skills } from './Sections.jsx';
 import './styles.css';
 
-const menuQuery = '(max-width: 650px)';
+const menuQuery = '(max-width: 900px)'; // Keep in sync with the compact header in styles.css.
 const navigation = [
   ['home', 'Home'],
   ['about', 'About'],
