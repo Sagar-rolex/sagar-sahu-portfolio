@@ -131,8 +131,13 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 .project:focus-within .project-copy { transform: translateY(-2px); }
 .contact { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: clamp(1.25rem, 4vw, 2rem); }
 .email { display: inline-block; color: var(--accent); overflow-wrap: anywhere; margin-top: .5rem; }
-.email:hover, .footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.footer { display: flex; justify-content: space-between; padding-block: 1.5rem 2rem; color: var(--muted); font-size: .9rem; }
+.email:hover, .footer > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding-block: 1.5rem 2rem; color: var(--muted); font-size: .9rem; }
+.footer-social { display: flex; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+.footer-social a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); transition: color .24s, border-color .24s, box-shadow .24s; }
+.footer-social a:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--hover-line); box-shadow: 0 0 15px var(--glow); }
+.footer-social svg { width: 20px; height: 20px; }
+@media (max-width: 440px) { .footer { flex-direction: column; } }
 .intro { animation: entrance .64s var(--ease) calc(65ms * var(--step)) both; }
 .pending { opacity: 0; }
 .entering { animation: entrance .55s var(--ease) var(--delay, 0ms) both; }
