@@ -21,7 +21,12 @@ export function Hero() {
           <p className="intro" style={{ "--step": "2" }}>I’m Sagar Sahu, an MCA candidate building full-stack applications with a focus on usability and reliable software.</p>
           <div className="flex flex-wrap items-center actions intro" style={{ "--step": "3" }}>
             <a className="button primary" href="#projects">My Projects</a>
-            <a className="button" href="Sagar_Sahu_Resume.pdf" download>Download Résumé</a>
+            <a className="button resume-download gap-2" href="Sagar_Sahu_Resume.pdf" download="Sagar_Sahu_Resume.pdf">
+              <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" />
+              </svg>
+              Download Resume
+            </a>
           </div>
         </div>
         <div className="code-entry intro" style={{ "--step": "2" }}>

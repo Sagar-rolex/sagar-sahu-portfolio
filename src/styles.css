@@ -83,6 +83,8 @@ h1 em { font-style: normal; color: var(--accent); background: linear-gradient(10
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .55rem .95rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); font-weight: 650; font-size: .9rem; transition: transform .24s var(--ease), border-color .24s, box-shadow .24s; }
 .button.primary { color: #170b29; border-color: #ba92ff; background: linear-gradient(115deg, #d3b1ff, #a477ff); }
 .button:is(:hover, :focus-visible) { transform: translateY(-3px); border-color: var(--hover-line); box-shadow: 0 7px 24px var(--glow); }
+.button.resume-download { color: var(--accent); border-color: var(--hover-line); background: color-mix(in srgb, var(--panel), var(--accent) 7%); }
+.button.resume-download:hover { background: color-mix(in srgb, var(--panel), var(--accent) 13%); }
 .terminal { color: #eeeaff; background: linear-gradient(155deg, #15132c, #0b0b1f 56%, #221635); border: 1px solid #ad78ea; border-radius: 19px; box-shadow: 0 0 22px #a762ff57, inset 0 0 20px #9867ec28; transform: perspective(1000px) rotateY(-7deg) rotateX(3deg); animation: terminal-float 8s ease-in-out infinite; }
 .terminal-bar { display: flex; align-items: center; gap: 6px; padding: .82rem 1rem; border-bottom: 1px solid #ffffff19; }
 .terminal-bar span { width: 9px; height: 9px; border-radius: 50%; background: #ff71a1; }
