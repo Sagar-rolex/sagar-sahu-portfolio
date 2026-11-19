@@ -6,6 +6,18 @@ const links = [...navigation.querySelectorAll('a')];
 const sections = links.map(link => document.querySelector(link.hash));
 const narrow = matchMedia('(max-width: 650px)');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const messageForm = document.querySelector('#message');
+
+messageForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const fields = new FormData(messageForm);
+  const name = fields.get('name').trim();
+  const email = fields.get('email').trim();
+  const message = fields.get('message').trim();
+  const subject = encodeURIComponent(`Portfolio message from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\r\nEmail: ${email}\r\n\r\n${message}`);
+  location.href = `${messageForm.action}?subject=${subject}&body=${body}`;
+});
 
 themeButton.setAttribute('aria-pressed', String(root.dataset.theme === 'light'));
 themeButton.addEventListener('click', () => {
