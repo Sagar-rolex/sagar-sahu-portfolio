@@ -132,8 +132,10 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 .contact { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: clamp(1.25rem, 4vw, 2rem); }
 .email { display: inline-block; color: var(--accent); overflow-wrap: anywhere; margin-top: .5rem; }
 .email:hover, .footer-row > a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.footer { padding-block: 1.5rem 2rem; }
+.footer { margin-top: 1.5rem; padding-block: 1.25rem 2rem; border-top: 1px solid var(--line); }
 .footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; color: var(--muted); font-size: .9rem; }
+.footer-brand { font-weight: 550; }
+.footer-brand span { font-size: 1.55rem; }
 .footer-social { display: flex; gap: .4rem; margin: 0; padding: 0; list-style: none; }
 .footer-social a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); transition: color .24s, border-color .24s, box-shadow .24s; }
 .footer-social a:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--hover-line); box-shadow: 0 0 15px var(--glow); }

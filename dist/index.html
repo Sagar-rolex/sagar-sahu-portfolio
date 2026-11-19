@@ -118,11 +118,23 @@ developer.<strong>build</strong>();</code></pre>
           <a class="button" href="https://www.instagram.com/sagar._.24_/">Instagram</a>
         </div>
       </div>
+      <form class="card message-form" id="message" action="mailto:24sahusagar@gmail.com" method="post" enctype="text/plain" aria-labelledby="message-title">
+        <h2 id="message-title">Send a message</h2>
+        <div class="message-fields">
+          <label>Name<input name="name" autocomplete="name" maxlength="100" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+        </div>
+        <label>Message<textarea name="message" rows="4" maxlength="1200" required></textarea></label>
+        <div class="message-actions">
+          <button type="submit" class="button primary">Open email draft</button>
+          <p>Opens your email app to send the message.</p>
+        </div>
+      </form>
     </section>
   </main>
   <footer class="wrap footer">
     <div class="footer-row">
-      <span>Sagar Sahu</span>
+      <div class="brand footer-brand"><span aria-hidden="true">S</span> © 2026 Sagar Sahu</div>
       <ul class="footer-social" aria-label="Social profiles">
         <li><a href="https://www.instagram.com/sagar._.24_/" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -142,18 +154,6 @@ developer.<strong>build</strong>();</code></pre>
       </ul>
       <a href="#home">Back to top</a>
     </div>
-    <form class="card message-form" id="message" action="mailto:24sahusagar@gmail.com" method="post" enctype="text/plain" aria-labelledby="message-title">
-      <h2 id="message-title">Send a message</h2>
-      <div class="message-fields">
-        <label>Name<input name="name" autocomplete="name" maxlength="100" required></label>
-        <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
-      </div>
-      <label>Message<textarea name="message" rows="4" maxlength="1200" required></textarea></label>
-      <div class="message-actions">
-        <button type="submit" class="button primary">Open email draft</button>
-        <p>Opens your email app to send the message.</p>
-      </div>
-    </form>
   </footer>
 </body>
 </html>
