@@ -127,6 +127,10 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 .project-copy p { margin-top: .5rem; }
 .project-content .tags { margin-bottom: 1rem; }
 .project-content .actions { margin-top: auto; }
+.credential { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
+.credential-meta { color: var(--accent); font-weight: 650; font-size: .875rem; }
+.credential p { margin-bottom: .2rem; }
+.credential .button { margin-top: auto; }
 .project:focus-within .art { transform: rotate(0) scale(1.07); }
 .project:focus-within .project-copy { transform: translateY(-2px); }
 .contact { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: clamp(1.25rem, 4vw, 2rem); }
@@ -170,6 +174,7 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
   .skills-grid, .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skills-grid > :nth-child(4) { grid-column: auto; }
   .skills-grid > :last-child { grid-column: 1 / -1; }
+  .credentials-grid > :last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 650px) {
   .wrap { width: calc(100% - 2rem); }
