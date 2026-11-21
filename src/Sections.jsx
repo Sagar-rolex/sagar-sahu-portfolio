@@ -63,7 +63,7 @@ export function About() {
             <span className="avatar" aria-hidden="true">SS</span>
             <div><h3>Sagar Sahu</h3><p>MCA candidate · Mumbai, India</p></div>
           </div>
-          <p>I’m an aspiring software developer focused on full-stack web development. I have hands-on experience with Java, JavaScript, React.js, Node.js, Spring Boot, MySQL, and MongoDB. I learn quickly, adapt to new tools, and enjoy building real-world applications. I’m looking for an opportunity to start my career as a full-stack developer.</p>
+          <p>I’m an aspiring software developer with a strong interest in full-stack web development. I have hands-on experience with Java, JavaScript, React.js, Node.js, Spring Boot, MySQL, and MongoDB. I’m a quick learner, adaptable to new technologies, and passionate about building practical, real-world applications. I’m seeking an opportunity to begin my career as a Full Stack Developer and contribute to impactful projects while continuously improving my skills.</p>
         </article>
         <article className="card" data-reveal style={{ "--delay": "80ms" }}>
           <h3>Education</h3>
