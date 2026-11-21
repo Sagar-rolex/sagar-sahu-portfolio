@@ -1,3 +1,6 @@
+const contactEmail = '24sahusagar@gmail.com';
+const contactLink = `mailto:${contactEmail}`;
+
 function openMessageDraft(event) {
   event.preventDefault();
   const form = event.currentTarget;
@@ -20,7 +23,7 @@ export function Hero() {
           <h1 id="hero-title" className="intro" style={{ "--step": "1" }}>Code. Build.<br />Deploy. <em>Repeat.</em></h1>
           <p className="intro" style={{ "--step": "2" }}>I’m Sagar Sahu, an MCA candidate building full-stack applications with a focus on usability and reliable software.</p>
           <div className="flex flex-wrap items-center actions intro" style={{ "--step": "3" }}>
-            <a className="button primary" href="#projects">My Projects</a>
+            <a className="button primary" href={contactLink}>Email me</a>
             <a className="button resume-download gap-2" href="Sagar_Sahu_Resume.pdf" download="Sagar_Sahu_Resume.pdf">
               <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" />
@@ -167,13 +170,13 @@ export function Contact() {
   return (
     <section id="contact" tabIndex={-1} className="wrap section" aria-labelledby="contact-title">
       <div className="card contact" data-reveal>
-        <div><h2 id="contact-title">Get in touch</h2><a className="email" href="mailto:24sahusagar@gmail.com">24sahusagar@gmail.com</a></div>
+        <div><h2 id="contact-title">Get in touch</h2><a className="email" href={contactLink}>{contactEmail}</a></div>
         <div className="flex flex-wrap items-center actions">
           <a className="button" href="https://github.com/Sagar-rolex">GitHub</a>
           <a className="button" href="https://www.linkedin.com/in/sagar-sahu-24112925b/">LinkedIn</a>
         </div>
       </div>
-      <form onSubmit={openMessageDraft} className="card message-form" id="message" action="mailto:24sahusagar@gmail.com" method="post" encType="text/plain" aria-labelledby="message-title">
+      <form onSubmit={openMessageDraft} className="card message-form" id="message" action={contactLink} method="post" encType="text/plain" aria-labelledby="message-title">
         <h2 id="message-title">Send a message</h2>
         <div className="message-fields grid gap-4">
           <label>Name<input name="name" autoComplete="name" maxLength="100" required /></label>
