@@ -126,8 +126,8 @@ export function Projects() {
           <div className="flex flex-wrap items-center actions"><a className="button" href="https://sagar-rolex-foodie-express.vercel.app/" target="_blank" rel="noopener" aria-label="Foodie Express live demo (opens in a new tab)">Live Demo</a><a className="button" href="https://github.com/Sagar-rolex/Sagar-rolex-Foodie-Express" target="_blank" rel="noopener" aria-label="Foodie Express on GitHub (opens in a new tab)">GitHub</a></div></div>
         </article>
         <article className="card project" data-reveal style={{ "--delay": "160ms" }}>
-          <div className="project-visual resume" aria-hidden="true"><div className="art"><div className="sheet"><b>Résumé</b><i></i><i></i><i></i><i></i></div><span>✦</span></div></div>
-          <div className="project-content"><div className="project-copy"><h3>AI Resume Builder</h3><p>An AI-assisted résumé editor with customizable templates, real-time preview, saved drafts, and PDF export.</p></div>
+          <div className="project-visual resume" aria-hidden="true"><div className="art"><div className="sheet"><b>Resume</b><i></i><i></i><i></i><i></i></div><span>✦</span></div></div>
+          <div className="project-content"><div className="project-copy"><h3>AI Resume Builder</h3><p>An AI-assisted resume editor with customizable templates, real-time preview, saved drafts, and PDF export.</p></div>
           <ul className="tags"><li>MongoDB</li><li>Express.js</li><li>React</li><li>Node.js</li></ul>
           <div className="flex flex-wrap items-center actions"><a className="button" href="https://resume-builder-seven-jet.vercel.app/" target="_blank" rel="noopener" aria-label="AI Resume Builder live demo (opens in a new tab)">Live Demo</a><a className="button" href="https://github.com/Sagar-rolex/ResumeBuilder" target="_blank" rel="noopener" aria-label="AI Resume Builder on GitHub (opens in a new tab)">GitHub</a></div></div>
         </article>
@@ -226,7 +226,7 @@ export function Contact() {
           </a>
           <a className="button gap-2" href={resumeFile} download={resumeFile}>
             <ContactIcon><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" /></ContactIcon>
-            Download résumé
+            Download Resume
           </a>
         </div>
         <p className="contact-status" role="status">{copyStatus}</p>
