@@ -242,6 +242,11 @@ export function Footer() {
             <path fill="currentColor" stroke="none" d="M8.1 7.2c.3-.1.6 0 .7.3l.9 2c.1.2.1.4-.1.6l-.6.7a6.5 6.5 0 0 0 2.9 2.7l.7-.9c.2-.2.4-.2.6-.1l2 .9c.3.1.4.3.3.6-.2 1.2-1 1.9-2.1 1.8-2.9-.3-6.7-3.7-6.7-6.5 0-1 .5-1.8 1.4-2.1Z"/>
           </svg>
         </a></li>
+        <li><a href="https://leetcode.com/u/Sagar_Sahu_/" aria-label="LeetCode profile" title="LeetCode">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15.5 3.5 6.2 12.8a3.8 3.8 0 0 0 0 5.4l2.1 2.1a4.1 4.1 0 0 0 5.8 0l2-2M9.1 9.9a4.1 4.1 0 0 1 5.8 0l2.1 2.1m-7.6 3h10.8" />
+          </svg>
+        </a></li>
       </ul>
       <a href="#home">Back to top</a>
       </div>
