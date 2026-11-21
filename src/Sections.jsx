@@ -1,5 +1,6 @@
 const contactEmail = '24sahusagar@gmail.com';
 const contactLink = `mailto:${contactEmail}`;
+const githubProfile = 'https://github.com/Sagar-rolex';
 
 function openMessageDraft(event) {
   event.preventDefault();
@@ -96,6 +97,14 @@ export function Skills() {
   );
 }
 
+function GitHubIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.45-1.11-1.45-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.69 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.73c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+    </svg>
+  );
+}
+
 export function Projects() {
   return (
     <section id="projects" tabIndex={-1} className="wrap section" aria-labelledby="projects-title">
@@ -120,6 +129,16 @@ export function Projects() {
           <div className="flex flex-wrap items-center actions"><a className="button" href="https://resume-builder-seven-jet.vercel.app/" target="_blank" rel="noopener" aria-label="AI Resume Builder live demo (opens in a new tab)">Live Demo</a><a className="button" href="https://github.com/Sagar-rolex/ResumeBuilder" target="_blank" rel="noopener" aria-label="AI Resume Builder on GitHub (opens in a new tab)">GitHub</a></div></div>
         </article>
       </div>
+      <a className="card more-projects flex items-center gap-4" href={`${githubProfile}?tab=repositories`} target="_blank" rel="noopener" aria-label="More on GitHub (opens in a new tab)" data-reveal>
+        <GitHubIcon className="more-projects-icon size-7 shrink-0" />
+        <div className="min-w-0 flex-1">
+          <h3>More on GitHub</h3>
+          <p>Browse my other repositories and experiments.</p>
+        </div>
+        <svg className="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M13 5h6v6m0-6-8 8m6 0v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h6" />
+        </svg>
+      </a>
     </section>
   );
 }
@@ -178,7 +197,7 @@ export function Contact() {
       <div className="card contact" data-reveal>
         <div><h2 id="contact-title">Get in touch</h2><a className="email" href={contactLink}>{contactEmail}</a></div>
         <div className="flex flex-wrap items-center actions">
-          <a className="button" href="https://github.com/Sagar-rolex">GitHub</a>
+          <a className="button" href={githubProfile}>GitHub</a>
           <a className="button" href="https://www.linkedin.com/in/sagar-sahu-24112925b/">LinkedIn</a>
         </div>
       </div>
@@ -209,10 +228,8 @@ export function Footer() {
               <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </a></li>
-          <li><a href="https://github.com/Sagar-rolex" aria-label="GitHub" title="GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.45-1.11-1.45-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.69 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.73c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
-            </svg>
+          <li><a href={githubProfile} aria-label="GitHub" title="GitHub">
+            <GitHubIcon />
           </a></li>
           <li><a href="https://www.linkedin.com/in/sagar-sahu-24112925b/" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
