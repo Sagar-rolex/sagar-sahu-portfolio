@@ -148,9 +148,17 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 .credential .button { margin-top: auto; }
 .project:focus-within .art { transform: rotate(0) scale(1.07); }
 .project:focus-within .project-copy { transform: translateY(-2px); }
-.contact { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: clamp(1.25rem, 4vw, 2rem); }
-.email { display: inline-block; color: var(--accent); overflow-wrap: anywhere; margin-top: .5rem; }
-.email:hover, .footer-row > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-card { scroll-margin-top: 88px; padding: clamp(1.5rem, 5vw, 4rem); text-align: center; border-color: color-mix(in srgb, var(--accent), var(--line) 65%); background-image: radial-gradient(ellipse at top, var(--glow), transparent 72%); }
+.contact-card h2 { max-width: 32ch; margin-inline: auto; text-wrap: balance; }
+.contact-intro { max-width: 54ch; margin: 1rem auto 1.5rem; }
+.contact-actions { max-width: 38rem; margin-inline: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contact-actions .button { min-width: 0; min-height: 48px; }
+.contact-actions .button span { min-width: 0; overflow-wrap: anywhere; }
+.contact-status { min-height: 1.5rem; margin-top: .25rem; color: var(--accent); font-size: .875rem; }
+.contact-profiles { gap: .25rem 1.25rem; margin: 0; padding: 0; }
+.contact-profiles a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .5rem; }
+.contact-profiles a:is(:hover, :focus-visible) { color: var(--accent); }
+.footer-row > a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .footer { margin-top: 1.5rem; padding-block: 1.25rem 2rem; border-top: 1px solid var(--line); }
 .footer-row { gap: .75rem; color: var(--muted); font-size: .9rem; }
 .footer-brand { font-weight: 550; }
@@ -159,18 +167,6 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 .footer-social a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); transition: color .24s, border-color .24s, box-shadow .24s; }
 .footer-social a:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--hover-line); box-shadow: 0 0 15px var(--glow); }
 .footer-social svg { width: 20px; height: 20px; }
-.message-form { display: grid; gap: 1rem; margin-top: 1.25rem; }
-.message-form h2 { font-size: clamp(1.45rem, 3vw, 1.85rem); }
-.message-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.message-form label { display: grid; gap: .3rem; font-weight: 650; }
-.message-form :is(input, textarea) { width: 100%; min-height: 44px; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 9px; background: var(--page); color: var(--text); font: inherit; font-weight: 400; }
-.message-form textarea { resize: vertical; }
-.message-actions { gap: .65rem 1rem; }
-.message-actions p { font-size: .875rem; }
-@media (max-width: 440px) {
-  .footer-row { flex-direction: column; }
-  .message-fields { grid-template-columns: minmax(0, 1fr); }
-}
 .intro { animation: entrance .64s var(--ease) calc(65ms * var(--step)) both; }
 .pending { opacity: 0; }
 .entering { animation: entrance .55s var(--ease) var(--delay, 0ms) both; }
@@ -220,7 +216,8 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
 }
 @media (max-width: 440px) {
   .skills-grid { grid-template-columns: minmax(0, 1fr); }
-  .contact { flex-direction: column; align-items: flex-start; }
+  .contact-actions { grid-template-columns: minmax(0, 1fr); }
+  .footer-row { flex-direction: column; }
   .card:not(.project) { padding-inline: 1.1rem; }
 }
 @media (hover: none) {

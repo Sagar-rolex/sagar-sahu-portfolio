@@ -1,17 +1,20 @@
+import { useState } from 'react';
+
 const contactEmail = '24sahusagar@gmail.com';
 const contactLink = `mailto:${contactEmail}`;
 const githubProfile = 'https://github.com/Sagar-rolex';
 
-function openMessageDraft(event) {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const fields = new FormData(form);
-  const name = fields.get('name').trim();
-  const email = fields.get('email').trim();
-  const message = fields.get('message').trim();
-  const subject = encodeURIComponent('Portfolio message from ' + name);
-  const body = encodeURIComponent('Name: ' + name + '\r\nEmail: ' + email + '\r\n\r\n' + message);
-  window.location.href = form.action + '?subject=' + subject + '&body=' + body;
+const contactPhone = '+918591189235';
+const resumeFile = 'Sagar_Sahu_Resume.pdf';
+const linkedinProfile = 'https://www.linkedin.com/in/sagar-sahu-24112925b/';
+const leetcodeProfile = 'https://leetcode.com/u/Sagar_Sahu_/';
+
+function ContactIcon({ children }) {
+  return (
+    <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {children}
+    </svg>
+  );
 }
 
 export function Hero() {
@@ -31,7 +34,7 @@ export function Hero() {
               </svg>
               Email me
             </a>
-            <a className="button resume-download gap-2" href="Sagar_Sahu_Resume.pdf" download="Sagar_Sahu_Resume.pdf">
+            <a className="button resume-download gap-2" href={resumeFile} download={resumeFile}>
               <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" />
               </svg>
@@ -192,27 +195,47 @@ export function Achievements() {
 }
 
 export function Contact() {
+  const [copyStatus, setCopyStatus] = useState('');
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+      setCopyStatus('Email address copied.');
+    } catch {
+      setCopyStatus('Clipboard unavailable. You can select and copy the email address above.');
+    }
+  }
+
   return (
     <section id="contact" tabIndex={-1} className="wrap section" aria-labelledby="contact-title">
-      <div className="card contact" data-reveal>
-        <div><h2 id="contact-title">Get in touch</h2><a className="email" href={contactLink}>{contactEmail}</a></div>
-        <div className="flex flex-wrap items-center actions">
-          <a className="button" href={githubProfile}>GitHub</a>
-          <a className="button" href="https://www.linkedin.com/in/sagar-sahu-24112925b/">LinkedIn</a>
+      <div className="card contact-card" id="message" data-reveal>
+        <h2 id="contact-title">Want to discuss ideas or opportunities?<br />Let’s talk.</h2>
+        <p className="contact-intro">I’m looking for software development roles where I can build useful products and grow as a developer. Email is the fastest way to reach me.</p>
+        <div className="contact-actions grid gap-2">
+          <a className="button primary gap-2" href={contactLink}>
+            <ContactIcon><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></ContactIcon>
+            <span>{contactEmail}</span>
+          </a>
+          <button className="button gap-2" type="button" onClick={copyEmail}>
+            <ContactIcon><rect x="8" y="8" width="12" height="12" rx="2" /><path d="M16 4H6a2 2 0 0 0-2 2v10" /></ContactIcon>
+            Copy email
+          </button>
+          <a className="button gap-2" href={'tel:' + contactPhone}>
+            <ContactIcon><path d="M8 3H5a2 2 0 0 0-2 2 17 17 0 0 0 16 16 2 2 0 0 0 2-2v-3l-5-2-2 2a12 12 0 0 1-6-6l2-2-2-5Z" /></ContactIcon>
+            +91 85911 89235
+          </a>
+          <a className="button gap-2" href={resumeFile} download={resumeFile}>
+            <ContactIcon><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" /></ContactIcon>
+            Download résumé
+          </a>
         </div>
+        <p className="contact-status" role="status">{copyStatus}</p>
+        <ul className="contact-profiles flex flex-wrap justify-center list-none" aria-label="Professional profiles">
+          <li><a href={linkedinProfile}>LinkedIn</a></li>
+          <li><a href={githubProfile}>GitHub</a></li>
+          <li><a href={leetcodeProfile}>LeetCode</a></li>
+        </ul>
       </div>
-      <form onSubmit={openMessageDraft} className="card message-form" id="message" action={contactLink} method="post" encType="text/plain" aria-labelledby="message-title">
-        <h2 id="message-title">Send a message</h2>
-        <div className="message-fields grid gap-4">
-          <label>Name<input name="name" autoComplete="name" maxLength="100" required /></label>
-          <label>Email<input type="email" name="email" autoComplete="email" maxLength="254" required /></label>
-        </div>
-        <label>Message<textarea name="message" rows="4" maxLength="1200" required></textarea></label>
-        <div className="message-actions flex flex-wrap items-center">
-          <button type="submit" className="button primary">Open email draft</button>
-          <p>Opens your email app to send the message.</p>
-        </div>
-      </form>
     </section>
   );
 }
@@ -231,12 +254,12 @@ export function Footer() {
           <li><a href={githubProfile} aria-label="GitHub" title="GitHub">
             <GitHubIcon />
           </a></li>
-          <li><a href="https://www.linkedin.com/in/sagar-sahu-24112925b/" aria-label="LinkedIn" title="LinkedIn">
+          <li><a href={linkedinProfile} aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
               <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2.6 7v8H10v-8H7.6Zm1.2-4a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Zm2.7 4v8h2.4v-4c0-1.1.4-1.8 1.4-1.8 1 0 1.3.7 1.3 1.8v4H19v-4.6c0-2.4-1.2-3.6-3-3.6-1.1 0-1.8.5-2.2 1.1V10h-2.3Z"/>
             </svg>
           </a></li>
-        <li><a href="https://leetcode.com/u/Sagar_Sahu_/" aria-label="LeetCode profile" title="LeetCode">
+        <li><a href={leetcodeProfile} aria-label="LeetCode profile" title="LeetCode">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15.5 3.5 6.2 12.8a3.8 3.8 0 0 0 0 5.4l2.1 2.1a4.1 4.1 0 0 0 5.8 0l2-2M9.1 9.9a4.1 4.1 0 0 1 5.8 0l2.1 2.1m-7.6 3h10.8" />
           </svg>
