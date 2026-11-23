@@ -68,8 +68,18 @@ export function About() {
         <article className="card" data-reveal style={{ "--delay": "80ms" }}>
           <h3>Education</h3>
           <ol className="timeline">
-            <li data-reveal><span>2025 – Present</span><strong>Master of Computer Applications</strong><p>SIES College of Management Studies</p></li>
-            <li data-reveal style={{ "--delay": "90ms" }}><span>2022 – 2025</span><strong>BSc Information Technology</strong><p>Tilak College</p></li>
+            <li data-reveal>
+              <span>2025 – Present</span>
+              <strong>Master of Computer Applications</strong>
+              <p>SIES College of Management Studies</p>
+              <p>69%</p>
+            </li>
+            <li data-reveal style={{ "--delay": "90ms" }}>
+              <span>2022 – 2025</span>
+              <strong>BSc Information Technology</strong>
+              <p>Tilak College</p>
+              <p>7.6 CGPA</p>
+            </li>
           </ol>
         </article>
       </div>
