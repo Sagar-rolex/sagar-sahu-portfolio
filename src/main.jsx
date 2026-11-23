@@ -123,7 +123,7 @@ function Header() {
             <span aria-hidden="true">☼</span><span aria-hidden="true">☾</span>
           </button>
           <button className="menu" type="button" aria-controls="navigation" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)} ref={menuButton}>
-            <span></span><span></span>
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
           </button>
         </div>
       </div>

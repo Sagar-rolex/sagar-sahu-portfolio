@@ -67,9 +67,10 @@ nav a:is(:hover, :focus-visible, [aria-current])::after { transform: scaleX(1); 
 [data-theme="light"] .theme::before { transform: translateX(0); }
 [data-theme="light"] .theme span:last-child { color: var(--text); }
 .menu { width: 42px; height: 42px; border-radius: 10px; display: none; place-content: center; gap: 5px; }
-.menu span { width: 17px; height: 2px; background: currentColor; transition: transform .25s var(--ease); }
-.menu[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
-.menu[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+.menu span { width: 17px; height: 2px; background: currentColor; transition: transform .25s var(--ease), opacity .25s; }
+.menu[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+.menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
 section { scroll-margin-top: 88px; }
 .hero { isolation: isolate; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: radial-gradient(ellipse at 78% 69%, var(--glow), transparent 52%); }
 .hero-grid { position: relative; min-height: 490px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(2rem, 5vw, 4.5rem); padding-block: 5.5rem 6.5rem; }
