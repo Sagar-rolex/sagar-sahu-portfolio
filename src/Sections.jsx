@@ -44,6 +44,11 @@ export function Hero() {
         </div>
         <div className="code-entry intro" style={{ "--step": "2" }}>
           <div className="terminal">
+            <svg className="terminal-sweep" aria-hidden="true" focusable="false">
+              {['halo', 'trail', 'violet', 'purple', 'head'].map(layer => (
+                <rect key={layer} className={`terminal-sweep-stroke terminal-sweep-${layer}`} x=".5" y=".5" rx="18.5" pathLength="100" />
+              ))}
+            </svg>
             <div className="terminal-bar"><span></span><span></span><span></span><small>developer.js</small></div>
             <pre><code>{""}<b>{"const"}</b>{" developer = {\n  name: "}<i>{"\"Sagar Sahu\""}</i>{",\n  role: "}<i>{"\"Software Developer\""}</i>{",\n  interests: ["}<i>{"\"Web Dev\""}</i>{", "}<i>{"\"AI\""}</i>{"],\n  location: "}<i>{"\"Mumbai, India\""}</i>{"\n};\n\ndeveloper."}<strong>{"build"}</strong>{"();"}</code></pre>
           </div>

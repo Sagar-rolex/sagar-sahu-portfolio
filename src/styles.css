@@ -86,7 +86,34 @@ h1 em { font-style: normal; color: var(--accent); background: linear-gradient(10
 .button:is(:hover, :focus-visible) { transform: translateY(-3px); border-color: var(--hover-line); box-shadow: 0 7px 24px var(--glow); }
 .button.resume-download { color: var(--accent); border-color: var(--hover-line); background: color-mix(in srgb, var(--panel), var(--accent) 7%); }
 .button.resume-download:hover { background: color-mix(in srgb, var(--panel), var(--accent) 13%); }
-.terminal { color: #eeeaff; background: linear-gradient(155deg, #15132c, #0b0b1f 56%, #221635); border: 1px solid #ad78ea; border-radius: 19px; box-shadow: 0 0 22px #a762ff57, inset 0 0 20px #9867ec28; transform: perspective(1000px) rotateY(-7deg) rotateX(3deg); animation: terminal-float 8s ease-in-out infinite; }
+.terminal { position: relative; color: #eeeaff; background: linear-gradient(155deg, #15132c, #0b0b1f 56%, #221635); border: 1px solid #ad78ea; border-radius: 19px; box-shadow: 0 0 22px #a762ff57, inset 0 0 20px #9867ec28; transform: perspective(1000px) rotateY(-7deg) rotateX(3deg); animation: terminal-float 8s ease-in-out infinite; }
+.terminal-sweep {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.terminal-sweep-stroke {
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: calc(var(--trail) * 1px) calc((100 - var(--trail)) * 1px);
+  animation: terminal-border-sweep 6s linear infinite;
+}
+.terminal-sweep-halo { --trail: 9; stroke: #8b5cf6; stroke-width: 10; opacity: .68; filter: blur(4px); }
+.terminal-sweep-trail { --trail: 13; stroke: #8b5cf6; stroke-width: 1.5; opacity: .42; }
+.terminal-sweep-violet { --trail: 8; stroke: #a855f7; stroke-width: 2.25; opacity: .85; }
+.terminal-sweep-purple { --trail: 4; stroke: #d1a0ff; stroke-width: 2.5; }
+.terminal-sweep-head { --trail: 1.4; stroke: #fff; stroke-width: 2.75; }
+/* With a normalized perimeter, every layer ends at the same moving point. */
+@keyframes terminal-border-sweep {
+  from { stroke-dashoffset: calc(var(--trail) * 1px); }
+  to { stroke-dashoffset: calc((var(--trail) - 100) * 1px); }
+}
 .terminal-bar { display: flex; align-items: center; gap: 6px; padding: .82rem 1rem; border-bottom: 1px solid #ffffff19; }
 .terminal-bar span { width: 9px; height: 9px; border-radius: 50%; background: #ff71a1; }
 .terminal-bar span:nth-child(2) { background: #ffc779; }
@@ -207,6 +234,7 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-block: 3.25rem 3.9rem; }
   .hero h1 { font-size: clamp(2.4rem, 8.5vw, 3.45rem); }
   .terminal { width: min(100%, 480px); transform: none; animation: terminal-float-compact 8s ease-in-out infinite; box-shadow: 0 0 14px #a762ff46, inset 0 0 12px #9867ec23; }
+  .terminal-sweep-halo { stroke-width: 7; opacity: .48; filter: blur(2px); }
   .terminal pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   .floor { bottom: -315px; background-size: 44px 36px, 44px 36px, 100% 100%; }
   .avatar { animation: none; }
@@ -225,6 +253,7 @@ pre b { color: #d4a4ff; } pre i { color: #e5e88e; font-style: normal; } pre stro
   .button:active, .footer-social a:active { border-color: var(--hover-line); box-shadow: 0 0 12px var(--glow); }
 }
 @media (prefers-reduced-motion: reduce) {
+  .terminal-sweep { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .pending { opacity: 1; }
   .card:hover, .button:hover, .tags li:hover, .project:hover .project-copy { transform: none; }
